@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Data</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+    <h1>Edit Data</h1>
+<body>
+    <div class="container3">
+        <form action="" method="POST">
+
+            <div class="col-15">
+                <label for="string">String</label> 
+            </div>
+            <div class="col-85">
+                <input class="rowinput" id="masukkan" type="text" value="<%= item.string %>" placeholder="String" name="string">
+            </div>
+
+            <div class="col-15">
+                <label for="Integer">Integer</label>
+            </div>
+            <div class="col-85">
+                <input class="rowinput" id="masukkan" type="number" value="<%= item.integer %>" placeholder="Integer" name="integer">
+            </div>
+
+            <div class="col-15">
+                <label for="Float">Float</label> 
+            </div>
+            <div class="col-85">
+                <input class="rowinput" id="masukkan" step="0.01" type="number" value="<%= item.float %>" placeholder="Float" name="float">
+            </div>
+
+            <div class="col-15">
+                <label for="Date">Date</label>
+            </div>
+            <div class="col-85">
+                <input class="rowinput2" id="masukkan" type="date" value="<%= item.date %>" placeholder="end date" name="date">
+            </div>
+
+            <div class="col-15" >
+                <label for="Boolean">Boolean</label>
+            </div>
+            <div class="col-85">
+                <select name="boolean" id="boolean">
+                    <option selected disabled>Choose the boolean ...</option>
+                    <option value="true" <%= item.boolean == 'true' ? ' selected' : '' %> >true</option>
+                    <option value="false" <%= item.boolean == 'false' ? ' selected' : '' %> >false</option>
+                </select>
+            </div>
+
+            <button class="btn-styling3" type="submit">Update</button>    
+        </form>
+    </div>
+</body>
+</html>

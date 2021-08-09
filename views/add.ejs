@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Data</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+    
+<body>
+    <div class="container2">
+        <form action="/add" method="POST">
+        <h1>Add Data</h1>
+
+            <div class="col-15">
+                <label for="string">String</label>
+            </div>
+            <div class="col-85">
+                <input class="rowinput" id="string" type="text" placeholder="String" name="string">
+            </div>
+
+            <div class="col-15">
+                <label for="Integer">Integer</label>
+            </div>
+            <div class="col-85">
+                <input class="rowinput" id="integer" type="number" placeholder="Integer" name="integer">
+            </div>
+
+            <div class="col-15">
+                <label for="Float">Float</label>
+            </div>
+            <div class="col-85">
+                <input class="rowinput" id="float" step="0.01" type="number" placeholder="Float" name="float">
+            </div>
+
+            <div class="col-15">
+                <label for="Date">Date</label>
+            </div>
+            <div class="col-85">
+                <input class="rowinput2" id="date" type="date" placeholder="end date" name="date">
+            </div>
+
+            <div class="col-15" >
+                <label for="Boolean">Boolean</label>
+            </div>
+            <div class="col-85">
+                <select class="newboolean" name="boolean">
+                    <option selected disabled>Choose the boolean ...</option>
+                    <option value="false">false</option>
+                    <option value="true">true</option>
+                </select>
+            </div>
+
+            <button class="btn-styling2" type="submit">Save</button>
+        </form>
+    </div>
+</body>
+</html>
