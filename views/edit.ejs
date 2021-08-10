@@ -7,10 +7,16 @@
     <title>Edit Data</title>
     <link rel="stylesheet" href="/css/style.css" />
 </head>
-    <h1>Edit Data</h1>
 <body>
     <div class="container3">
+        <h1>Edit Data</h1>
         <form action="" method="POST">
+            <div class="col-15">
+                <label for="id">ID</label>
+            </div>
+            <div class="col-85">
+                <input class="rowinput" id="masukkan" type="number" value="<%= item.id %>" placeholder="ID" name="id">
+            </div>
 
             <div class="col-15">
                 <label for="string">String</label> 
@@ -44,7 +50,7 @@
                 <label for="Boolean">Boolean</label>
             </div>
             <div class="col-85">
-                <select name="boolean" id="boolean">
+                <select class="newboolean" name="boolean" id="boolean">
                     <option selected disabled>Choose the boolean ...</option>
                     <option value="true" <%= item.boolean == 'true' ? ' selected' : '' %> >true</option>
                     <option value="false" <%= item.boolean == 'false' ? ' selected' : '' %> >false</option>

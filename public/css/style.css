@@ -27,7 +27,6 @@
 .checkbox {
     margin: 7px;
     cursor: pointer;
-    /* border: 8px solid red; */
     border: 8px solid rgb(0, 255, 42);
     cursor: auto;
 }
@@ -37,7 +36,6 @@
     border-right: 2.5px solid  #68686b;
     width: 100%;
     height: 100%;
-    /* color: #fff; */
     padding: 10px;
     border-radius: 5px;
 }
@@ -47,43 +45,26 @@ label {
     display: inline-block;
 }
 
-/* .label2 {
-    margin-left: 100px;
-} */
-
 .col-15 {
     float: left;
     width: 15%;
-    margin-top: 6px;
+    margin-top: 5px;
 }
 
 .col-85 {
     float: left;
     width: 85%;
-    margin-top: 6px;
+    margin-top: 5px;
 }
-
-/* .col-date {
-    float: left;
-    width: 20%;
-    margin-top: 6px;
-} */
 
 .rowinput2 {
     padding: 5px;
     border-radius: 5px;
 }
 
-/* .col-15 {
-    float: left;
-    width: 15%;
-    margin-top: 6px;
-} */
-
 .newboolean {
     margin: .6rem 0;
     margin-left: 100px;
-    /* padding-right: 630px; */
     float: right;
     border-radius: 5px;
     width: 100%;
@@ -100,14 +81,6 @@ label {
     border-radius: 5px;
 }
 
-/* .searchData {
-    margin-left: none;
-    background-color: #24a0ed;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
-} */
-
 .content-table {
     width: 80%;
     border-collapse: collapse;
@@ -115,7 +88,6 @@ label {
     font-size: 0.9em;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
-    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
     margin-left: 100px;
 }
 
@@ -204,17 +176,9 @@ input[type=number] {
 }
 
 input[type=date] {
-    /* width: 100%; */
-    /* padding: 8px 15px; */
     margin: 8px 0;
     box-sizing: border-box;
 }
-
-/* input[type="date"] {
-    background-color: #343a40;
-    border: none;
-    color: rgba(255, 255, 255, .3);
-} */
 
 select {
     width: 100%;
@@ -241,18 +205,8 @@ select {
 
 .pagination {
     display: inline-block;
-    margin-left: 100px;
+    margin-left: 50px;
 }
-
-/* .pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-} */
 
 .pagination a {
     color: #0047e0;
@@ -264,12 +218,6 @@ select {
     font-size: 16px;
     cursor: pointer;
 }
-
-/* .pagination a.active {
-    background-color: #4CAF50;
-    color: white;
-    border: 1px solid #4CAF50;
-} */
 
 .pagination a:hover:not(.active) {
     background-color: #ddd;
