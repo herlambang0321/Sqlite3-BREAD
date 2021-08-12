@@ -14,64 +14,65 @@
         <h2>Filters</h2>
     </div>
     <div>
-        <form action="" method="">
+        <form action="" method="GET">
+            <input type="hidden" name="page" value="1">
             <div class="container">
                 <div class="col-15">
                     <label for="ID">
-                        <input class="checkbox" type="checkbox" id="ID" name="id">ID
+                        <input class="checkbox" type="checkbox" id="ID" name="checkid">ID
                     </label>
                 </div>
                 <div class="col-85">
-                    <input class="rowinput" id="masukkan" type="number" placeholder="ID" name="id">
+                    <input class="rowinput" id="masukkan" type="number" placeholder="ID" name="id" value="<%= query.id %>">
                 </div>
 
                 <div class="col-15">
                     <label for="String">
-                        <input class="checkbox" type="checkbox" id="String" name="string">String
+                        <input class="checkbox" type="checkbox" id="String" name="checkstring">String
                     </label>
                 </div>
                 <div class="col-85">
-                    <input class="rowinput" id="masukkan" type="text" placeholder="String" name="string">
+                    <input class="rowinput" id="masukkan" type="text" placeholder="String" name="string" value="<%= query.string %>">
                 </div>
 
                 <div class="col-15">
                     <label for="Integer">
-                        <input class="checkbox" type="checkbox" id="Integer" name="integer">Integer
+                        <input class="checkbox" type="checkbox" id="Integer" name="checkinteger">Integer
                     </label>
                 </div>
                 <div class="col-85">
-                    <input class="rowinput" id="masukkan" type="number" placeholder="Integer" name="integer">
+                    <input class="rowinput" id="masukkan" type="number" placeholder="Integer" name="integer" value="<%= query.integer %>">
                 </div>
 
                 <div class="col-15">
                     <label for="Float">
-                        <input class="checkbox" type="checkbox" id="Float" name="float">Float
+                        <input class="checkbox" type="checkbox" id="Float" name="checkfloat">Float
                     </label>
                 </div>
                 <div class="col-85">
-                    <input class="rowinput" id="masukkan" step="0.01" type="number" placeholder="Float" name="float">
+                    <input class="rowinput" id="masukkan" step="0.01" type="number" placeholder="Float" name="float" value="<%= query.float %>">
                 </div>
 
                 <div class="col-15">
                     <label for="Date">
-                        <input class="checkbox" type="checkbox" id="Date" name="date">Date
+                        <input class="checkbox" type="checkbox" id="Date" name="checkdate">Date
                     </label>
                 </div>
                 <div class="col-85">
-                    <input class="rowinput2" id="masukkan" type="date" placeholder="start date" name="date">
+                    <input class="rowinput2" id="masukkan" type="date" placeholder="start date" name="date" value="<%= query.date %>">
                     <p class="date2">to</p>
-                    <input class="rowinput2" id="masukkan" type="date" placeholder="end date" name="date">
+                    <input class="rowinput2" id="masukkan" type="date" placeholder="end date" name="end-date" value="<%= query.date %>">
                 </div>
 
                 <div class="col-15" >
                     <label for="Boolean">
-                        <input class="checkbox" type="checkbox" id="Boolean" name="boolean">Boolean</label>
+                        <input class="checkbox" type="checkbox" id="Boolean" name="checkboolean">Boolean</label>
                 </div>
                 <div class="col-85">
                     <select class="newboolean" name="boolean">
                         <option selected disabled>Choose the boolean ...</option>
-                        <option value="false">false</option>
-                        <option value="true">true</option>
+                        <option value="true"<%= query.boolean == 'true' ? ' selected' : '' %>>true</option>
+                        <option value="false"<%= query.boolean == 'false' ? ' selected' : '' %>>false</option>
                     </select>
                 </div>
             </div> 
@@ -95,32 +96,30 @@
                     </thead>
                     <tbody>
                         <% data.forEach((item, index) => { %>
-                        <tr class="active-row">
-                            <td class="id-styling"><%= index + 1 + offset%></td>
-                            <td><%= item.string %></td>
-                            <td><%= item.integer %></td>
-                            <td><%= item.float %></td>
-                            <td><%= item.date %></td>
-                            <td><%= item.boolean %></td>
-                            <td><a class="btn-edit" href="/edit/<%= item.id %>">Edit</a><a class="btn-delete" href="/delete/<%= item.id %>">Delete</a></td>
-                        </tr>
-                        <% }) %>
-                    </tbody>
-                </table>
-            </form>
-        </div>
-
-        <div class="page pagination">
-            <form action="/" method="GET">
-                <div class="pagination">
-                    <a href="#">Previous</a>
-                    <% for(let i = 1; i <= pages; i++) { %>
-                    <a href="/?page=<%= i %>"><%= i %></a>
-                    <% } %>
-                    <a href="#">Next</a>
-                </div>
-            </form>
-        </div>
+                            <tr class="active-row">
+                                <td class="id-styling"><%= item.id %></td>
+                                <td><%= item.string %></td>
+                                <td><%= item.integer %></td>
+                                <td><%= item.float %></td>
+                                <td><%= item.date %></td>
+                                <td><%= item.boolean %></td>
+                                <td><a class="btn-edit" href="/edit/<%= item.id %>">Edit</a><a class="btn-delete" href="/delete/<%= item.id %>">Delete</a></td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+    
+                <form action="/" method="GET">
+                    <div class="pagination">
+                        <a href="#">Previous</a>
+                        <% for(let i = 1; i <= pages; i++) { %>
+                        <a href="<%= url.replace(`page=${page}`, `page=${i}`) %>"><%= i %></a>
+                        <% } %>
+                        <a href="#">Next</a>
+                    </div>
+                </form>
 
             <div class="addNew">
                 <a href="/add" class="btn-styling" type="submit">Add</a>

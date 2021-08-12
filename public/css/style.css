@@ -205,7 +205,7 @@ select {
 
 .pagination {
     display: inline-block;
-    margin-left: 50px;
+    margin-left: 100px;
 }
 
 .pagination a {
