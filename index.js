@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use("/", express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-  const { id, string, integer, float, date, boolean } = req.query;
+  const { id, string, integer, float, date, boolean, checkid, checkstring, checkinteger, checkfloat, checkdate, checkboolean } = req.query;
 
   const url = req.url == "/" ? "/?page=1" : req.url;
   const page = req.query.page || 1;
@@ -30,27 +30,27 @@ app.get("/", (req, res) => {
 
   let params = [];
 
-  if (id) {
+  if (id && checkid) {
     params.push(`id=${id}`);
   }
 
-  if (string) {
+  if (string && checkstring) {
     params.push(`string like '%${string}%'`);
   }
 
-  if (integer) {
+  if (integer && checkinteger) {
     params.push(`integer=${integer}`);
   }
 
-  if (float) {
+  if (float && checkfloat) {
     params.push(`float=${float}`);
   }
 
-  if (date) {
+  if (date && checkdate) {
     params.push(`date=${date}`);
   }
 
-  if (boolean) {
+  if (boolean && checkboolean) {
     params.push(`boolean='${boolean}'`);
   }
 
@@ -83,7 +83,7 @@ app.get("/", (req, res) => {
         pages,
         offset,
         url,
-        query: req.query,
+        query: req.query
       });
     });
   });

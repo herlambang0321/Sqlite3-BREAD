@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="col-15">
                     <label for="ID">
-                        <input class="checkbox" type="checkbox" id="ID" name="checkid">ID
+                        <input class="checkbox" type="checkbox" id="ID" name="checkid" <%= query.checkid ? 'checked': '' %>>ID
                     </label>
                 </div>
                 <div class="col-85">
@@ -28,7 +28,7 @@
 
                 <div class="col-15">
                     <label for="String">
-                        <input class="checkbox" type="checkbox" id="String" name="checkstring">String
+                        <input class="checkbox" type="checkbox" id="String" name="checkstring" <%= query.checkstring ? 'checked': '' %>>String
                     </label>
                 </div>
                 <div class="col-85">
@@ -37,7 +37,7 @@
 
                 <div class="col-15">
                     <label for="Integer">
-                        <input class="checkbox" type="checkbox" id="Integer" name="checkinteger">Integer
+                        <input class="checkbox" type="checkbox" id="Integer" name="checkinteger" <%= query.checkinteger ? 'checked': '' %>>Integer
                     </label>
                 </div>
                 <div class="col-85">
@@ -46,7 +46,7 @@
 
                 <div class="col-15">
                     <label for="Float">
-                        <input class="checkbox" type="checkbox" id="Float" name="checkfloat">Float
+                        <input class="checkbox" type="checkbox" id="Float" name="checkfloat" <%= query.checkfloat ? 'checked': '' %>>Float
                     </label>
                 </div>
                 <div class="col-85">
@@ -55,7 +55,7 @@
 
                 <div class="col-15">
                     <label for="Date">
-                        <input class="checkbox" type="checkbox" id="Date" name="checkdate">Date
+                        <input class="checkbox" type="checkbox" id="Date" name="checkdate" <%= query.checkdate ? 'checked': '' %>>Date
                     </label>
                 </div>
                 <div class="col-85">
@@ -66,7 +66,8 @@
 
                 <div class="col-15" >
                     <label for="Boolean">
-                        <input class="checkbox" type="checkbox" id="Boolean" name="checkboolean">Boolean</label>
+                        <input class="checkbox" type="checkbox" id="Boolean" name="checkboolean" <%= query.checkboolean ? 'checked': '' %>>Boolean
+                    </label>
                 </div>
                 <div class="col-85">
                     <select class="newboolean" name="boolean">
@@ -115,7 +116,7 @@
                     <div class="pagination">
                         <a href="#">Previous</a>
                         <% for(let i = 1; i <= pages; i++) { %>
-                        <a href="<%= url.replace(`page=${page}`, `page=${i}`) %>"><%= i %></a>
+                        <a class="page-item<%= i == page ? ' active' : '' %>" href="<%= url.replace(`page=${page}`, `page=${i}`) %>"><%= i %></a>
                         <% } %>
                         <a href="#">Next</a>
                     </div>
