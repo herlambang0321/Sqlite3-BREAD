@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 app.use("/", express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-  const { id, string, integer, float, date, boolean, checkid, checkstring, checkinteger, checkfloat, checkdate, checkboolean } = req.query;
+  const { id, string, integer, float, boolean, checkid, checkstring, checkinteger, checkfloat, checkdate, startDate, endDate, checkboolean } = req.query;
 
   const url = req.url == "/" ? "/?page=1" : req.url;
   const page = req.query.page || 1;
@@ -46,8 +46,8 @@ app.get("/", (req, res) => {
     params.push(`float=${float}`);
   }
 
-  if (date && checkdate) {
-    params.push(`date=${date}`);
+  if (checkdate && startDate && endDate) {
+    params.push(`date between '${startDate}' and '${endDate}'`);
   }
 
   if (boolean && checkboolean) {
